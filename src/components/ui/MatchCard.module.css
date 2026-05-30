@@ -1,0 +1,209 @@
+.card {
+  transition: border-color 0.2s;
+}
+
+.live {
+  border-color: var(--green);
+  box-shadow: 0 0 20px rgba(0, 200, 83, 0.1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.stage {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.matchup {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.teamHome {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.teamAway {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.crest {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.teamName {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.scoreSection {
+  text-align: center;
+  min-width: 80px;
+}
+
+.score {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.scoreDash {
+  color: var(--grey);
+  font-weight: 400;
+}
+
+.kickoff {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kickoffDate {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.kickoffTime {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+
+/* ---- Prediction section ---- */
+
+.prediction {
+  border-top: 1px solid var(--navy-border);
+  padding-top: 1rem;
+}
+
+.lockedPrediction {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lockedLabel {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.lockedScore {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--green);
+}
+
+.noPrediction {
+  font-size: 0.85rem;
+  color: var(--grey);
+  font-style: italic;
+}
+
+.predictionForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.predictionLabel {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.scoreInputs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scoreInput {
+  width: 60px !important;
+  text-align: center;
+  font-family: var(--font-display) !important;
+  font-weight: 800 !important;
+  font-size: 1.25rem !important;
+  padding: 0.4rem !important;
+}
+
+.inputDash {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--grey);
+  line-height: 1;
+}
+
+.saveBtn {
+  margin-left: 0.5rem;
+  min-width: 70px;
+}
+
+.inputError {
+  font-size: 0.8rem;
+  color: var(--red);
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 480px) {
+  .teamName {
+    font-size: 0.85rem;
+  }
+
+  .crest {
+    width: 30px;
+    height: 30px;
+  }
+}

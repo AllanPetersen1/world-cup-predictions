@@ -1,0 +1,28 @@
+// ============================================================
+// AUTH CALLBACK ROUTE
+// ============================================================
+// Supabase redirects here after email confirmation or OAuth login.
+// This route exchanges the code for a session cookie.
+// ============================================================
+
+import { createClient } from '@/lib/supabase/server'
+import { NextResponse } from 'next/server'
+
+export async function GET(request: Request) {
+  const { searchParams, origin } = new URL(request.url)
+  const code = searchParams.get('code')
+  const next = searchParams.get('next') ?? '/matches'
+
+  if (code) {
+    const supabase = await createClient()
+    const { error } = await supabase.auth.exchangeCodeForSession(code)
+
+    if (!error) {
+      // Successfully authenticated — redirect to the app
+      return NextResponse.redirect(`${origin}${next}`)
+    }
+  }
+
+  // Something went wrong — redirect to login with error
+  return NextResponse.redirect(`${origin}/login?error=auth_callback_failed`)
+}

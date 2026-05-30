@@ -1,0 +1,90 @@
+.pageHeader {
+  padding: 2rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.predictionProgress {
+  color: var(--grey);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.progressBar {
+  height: 4px;
+  background: var(--navy-light);
+  border-radius: 2px;
+  overflow: hidden;
+  max-width: 300px;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--green);
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.filterBtn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--grey);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filterBtn:hover {
+  color: var(--white);
+  border-color: var(--grey);
+}
+
+.filterActive {
+  background: var(--navy-light);
+  color: var(--green);
+  border-color: var(--green);
+}
+
+.matchList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 3rem;
+}
+
+.empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--grey);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.emptyHint {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  text-transform: none;
+  letter-spacing: 0;
+  max-width: 360px;
+  line-height: 1.5;
+}

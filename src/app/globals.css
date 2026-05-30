@@ -1,0 +1,277 @@
+/* ============================================================
+   GLOBAL STYLES — World Cup Predictor
+   
+   Aesthetic: Bold stadium scoreboard energy.
+   Dark navy background, bright green accents, punchy typography.
+   Barlow Condensed for headings (like jersey numbers), 
+   Barlow for body text.
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Colors */
+  --green: #00C853;
+  --green-dim: #00A040;
+  --navy: #0A0F1E;
+  --navy-mid: #111827;
+  --navy-light: #1C2640;
+  --navy-border: #263055;
+  --white: #FFFFFF;
+  --off-white: #E8EDF5;
+  --grey: #8A97B8;
+  --gold: #FFD700;
+  --red: #FF3B30;
+  --amber: #FF9F0A;
+
+  /* Typography */
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+
+  /* Spacing */
+  --radius: 8px;
+  --radius-lg: 16px;
+  --max-width: 900px;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--navy);
+  color: var(--off-white);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* ---- Typography ---- */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h3 { font-size: 1.25rem; }
+
+/* ---- Links ---- */
+
+a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Buttons ---- */
+
+.btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: var(--navy);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--green-dim);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--navy-light);
+  color: var(--off-white);
+  border: 1px solid var(--navy-border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--navy-border);
+}
+
+.btn-danger {
+  background: transparent;
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: var(--red);
+  color: white;
+}
+
+.btn-sm {
+  font-size: 0.8rem;
+  padding: 0.4rem 0.9rem;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* ---- Form elements ---- */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  background: var(--navy-light);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+input::placeholder {
+  color: var(--grey);
+}
+
+/* ---- Cards ---- */
+
+.card {
+  background: var(--navy-mid);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+/* ---- Layout ---- */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ---- Points badges ---- */
+
+.points-badge {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.points-3 { background: var(--gold); color: var(--navy); }
+.points-1 { background: var(--navy-light); color: var(--green); border: 1px solid var(--green); }
+.points-0 { background: var(--navy-light); color: var(--grey); border: 1px solid var(--navy-border); }
+.points-pending { background: var(--navy-light); color: var(--amber); border: 1px solid var(--amber); }
+
+/* ---- Status badges ---- */
+
+.status-badge {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.status-SCHEDULED { background: var(--navy-light); color: var(--grey); }
+.status-IN_PLAY { background: var(--green); color: var(--navy); animation: pulse 2s infinite; }
+.status-PAUSED { background: var(--amber); color: var(--navy); }
+.status-FINISHED { background: var(--navy-light); color: var(--off-white); }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* ---- Loading / Error states ---- */
+
+.loading {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--grey);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.error-box {
+  background: rgba(255, 59, 48, 0.1);
+  border: 1px solid var(--red);
+  border-radius: var(--radius);
+  padding: 1rem;
+  color: var(--red);
+  font-size: 0.9rem;
+}
+
+.success-box {
+  background: rgba(0, 200, 83, 0.1);
+  border: 1px solid var(--green);
+  border-radius: var(--radius);
+  padding: 1rem;
+  color: var(--green);
+  font-size: 0.9rem;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1rem;
+  }
+}

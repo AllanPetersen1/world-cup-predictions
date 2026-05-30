@@ -1,0 +1,52 @@
+# ============================================================
+# GITHUB ACTIONS — Backup Cron Job
+# ============================================================
+# This runs every 30 minutes as a BACKUP to Vercel's cron.
+# Vercel free tier cron runs max once per day in hobby plan,
+# so GitHub Actions gives us more frequent updates for free.
+#
+# Setup required:
+#   In your GitHub repo → Settings → Secrets and variables → Actions
+#   Add these secrets:
+#     APP_URL      = your Vercel deployment URL (e.g. https://your-app.vercel.app)
+#     CRON_SECRET  = same value as your CRON_SECRET env variable in Vercel
+# ============================================================
+
+name: Update Match Results
+
+on:
+  schedule:
+    # Runs every 30 minutes
+    # Cron syntax: minute hour day month weekday
+    - cron: '*/30 * * * *'
+  
+  # Also allow manual trigger from GitHub UI
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Trigger result update
+        run: |
+          echo "Calling cron endpoint at $(date)"
+          
+          RESPONSE=$(curl \
+            --silent \
+            --write-out "HTTP_STATUS:%{http_code}" \
+            --header "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
+            "${{ secrets.APP_URL }}/api/cron/update-results")
+          
+          HTTP_STATUS=$(echo $RESPONSE | grep -o "HTTP_STATUS:[0-9]*" | cut -d: -f2)
+          BODY=$(echo $RESPONSE | sed 's/HTTP_STATUS:[0-9]*//')
+          
+          echo "Status: $HTTP_STATUS"
+          echo "Response: $BODY"
+          
+          if [ "$HTTP_STATUS" != "200" ]; then
+            echo "Cron job failed with status $HTTP_STATUS"
+            exit 1
+          fi
+          
+          echo "Cron job completed successfully"
