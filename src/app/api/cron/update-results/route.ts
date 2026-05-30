@@ -18,6 +18,7 @@
 
 import { createAdminClient } from '@/lib/supabase/server'
 import { fetchActiveMatches } from '@/lib/football-api'
+import { fetchCompetitionMatches } from '@/lib/football-api'
 import { calculatePoints } from '@/lib/scoring'
 import { NextResponse } from 'next/server'
 
@@ -39,7 +40,7 @@ export async function GET(request: Request) {
   try {
     // ---- Step 1: Fetch recent matches from football API ----
     log.push('Fetching active matches from football API...')
-    const apiMatches = await fetchActiveMatches()
+    const apiMatches = await fetchCompetitionMatches()
     log.push(`Found ${apiMatches.length} matches from API`)
 
     // ---- Step 2: Update match scores in database ----
