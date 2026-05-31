@@ -29,6 +29,7 @@ export default function Nav({ username }: NavProps) {
   const links = [
     { href: '/matches', label: 'Matches' },
     { href: '/leaderboard', label: 'Leaderboard' },
+    { href: '/leagues', label: 'Leagues'}
   ]
 
   return (
