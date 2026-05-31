@@ -123,7 +123,7 @@ export default function LeaguesPage() {
           <div>
             <h1>My Leagues</h1>
             <p className={styles.subtitle}>
-              Create a private league and compete with friends
+              Create or join a private league and compete with friends and family.
             </p>
           </div>
           <div className={styles.headerButtons}>

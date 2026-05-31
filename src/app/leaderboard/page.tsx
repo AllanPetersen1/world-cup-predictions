@@ -63,7 +63,7 @@ export default function LeaderboardPage() {
       <main className="container">
         <div className={styles.pageHeader}>
           <h1>Leaderboard</h1>
-          <p className={styles.subtitle}>Points update automatically after each match</p>
+          <p className={styles.subtitle}>Overall leaderboard of all users. Points update automatically after each match</p>
         </div>
 
         {loading && <div className="loading">Loading standings...</div>}
