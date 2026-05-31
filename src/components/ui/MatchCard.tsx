@@ -119,11 +119,11 @@ export default function MatchCard({ match, prediction, onPredictionSaved }: Matc
         {/* Home team */}
         <div className={`${styles.team} ${styles.teamHome}`}>
           {match.home_team_crest && (
-            <img
-              src={match.home_team_crest}
-              alt={`${match.home_team} crest`}
+            <div
               className={styles.crest}
-              onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
+              style={{ backgroundImage: `url(${match.home_team_crest})` }}
+              role="img"
+              aria-label={`${match.home_team} crest`}
             />
           )}
           <span className={styles.teamName}>{match.home_team}</span>
@@ -148,11 +148,11 @@ export default function MatchCard({ match, prediction, onPredictionSaved }: Matc
         {/* Away team */}
         <div className={`${styles.team} ${styles.teamAway}`}>
           {match.away_team_crest && (
-            <img
-              src={match.away_team_crest}
-              alt={`${match.away_team} crest`}
+            <div
               className={styles.crest}
-              onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
+              style={{ backgroundImage: `url(${match.away_team_crest})` }}
+              role="img"
+              aria-label={`${match.away_team} crest`}
             />
           )}
           <span className={styles.teamName}>{match.away_team}</span>
