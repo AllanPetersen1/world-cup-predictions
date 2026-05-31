@@ -61,6 +61,137 @@
   margin-top: 0.25rem;
 }
 
+/* ---- Tabs ---- */
+
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--navy-border);
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: var(--grey);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all 0.15s;
+}
+
+.tab:hover {
+  color: var(--white);
+}
+
+.tabActive {
+  color: var(--green);
+  border-bottom-color: var(--green);
+}
+
+/* ---- Chart ---- */
+
+.chartSection {
+  padding-bottom: 3rem;
+}
+
+.statRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.stat {
+  background: var(--navy-light);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.statNum {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.75rem;
+  color: var(--white);
+  line-height: 1;
+}
+
+.statLabel {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.chartWrap {
+  background: var(--navy-mid);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1rem 0.5rem;
+}
+
+/* ---- Tooltip ---- */
+
+.tooltip {
+  background: var(--navy-mid);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  min-width: 160px;
+}
+
+.tooltipMatch {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 0.5rem;
+}
+
+.tooltipRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--off-white);
+  margin-bottom: 0.2rem;
+}
+
+.tooltipPts {
+  font-weight: 600;
+  color: var(--green);
+}
+
+.tooltipTotal {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--white);
+}
+
+.tooltipPred {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--grey);
+  border-top: 1px solid var(--navy-border);
+  padding-top: 0.4rem;
+}
+
 /* ---- Filters ---- */
 
 .filters {
@@ -105,13 +236,8 @@
   padding-bottom: 3rem;
 }
 
-.card {
-  transition: border-color 0.2s;
-}
-
-.live {
-  border-color: var(--green);
-}
+.card { transition: border-color 0.2s; }
+.live { border-color: var(--green); }
 
 .cardHeader {
   display: flex;
@@ -185,7 +311,6 @@
 }
 
 .scoreDash { color: var(--grey); font-weight: 400; }
-
 .kickoff { display: flex; flex-direction: column; align-items: center; }
 
 .kickoffDate {
@@ -203,8 +328,6 @@
   font-size: 1.5rem;
   color: var(--white);
 }
-
-/* ---- Prediction row ---- */
 
 .predictionRow {
   border-top: 1px solid var(--navy-border);
@@ -244,4 +367,10 @@
   font-size: 1.1rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+  .statRow { grid-template-columns: repeat(2, 1fr); }
+  .pageHeader { flex-direction: column; }
+  .pointsSummary { width: 100%; }
 }
