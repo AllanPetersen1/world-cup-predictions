@@ -104,9 +104,16 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  text-decoration: none;
+  transition: color 0.15s;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.playerName:hover {
+  color: var(--green);
+  text-decoration: none;
 }
 
 .youBadge {
