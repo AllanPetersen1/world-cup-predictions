@@ -27,8 +27,8 @@ export default function Nav({ username }: NavProps) {
   }
 
   const links = [
-    { href: '/matches', label: '⚽ Matches' },
-    { href: '/leaderboard', label: '🏆 Board' },
+    { href: '/matches', label: 'Matches' },
+    { href: '/leaderboard', label: 'Leaderboard' },
   ]
 
   return (
@@ -58,7 +58,7 @@ export default function Nav({ username }: NavProps) {
             <span className={styles.username}>{username}</span>
           )}
           <button onClick={handleLogout} className={`btn btn-sm btn-secondary ${styles.logoutBtn}`}>
-            Out
+            Log out
           </button>
         </div>
       </div>
