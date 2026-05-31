@@ -36,7 +36,7 @@ export default function Nav({ username }: NavProps) {
       <div className={`container ${styles.inner}`}>
         {/* Logo */}
         <Link href="/matches" className={styles.logo}>
-          Predictor
+          Home
         </Link>
 
         {/* Nav links */}
