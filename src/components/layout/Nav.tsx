@@ -35,10 +35,7 @@ export default function Nav({ username }: NavProps) {
   return (
     <nav className={styles.nav}>
       <div className={`container ${styles.inner}`}>
-        {/* Logo */}
-        <Link href="/matches" className={styles.logo}>
-          Home
-        </Link>
+        
 
         {/* Nav links */}
         <div className={styles.links}>
