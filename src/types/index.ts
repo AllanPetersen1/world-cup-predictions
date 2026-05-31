@@ -87,3 +87,26 @@ export interface FootballAPIMatch {
     code: string
   }
 }
+
+
+export interface League {
+  id: string
+  name: string
+  invite_code: string
+  created_by: string
+  competition: string
+  created_at: string
+}
+
+export interface LeagueMember {
+  id: string
+  league_id: string
+  user_id: string
+  joined_at: string
+}
+
+// League with extra info joined in
+export interface LeagueWithDetails extends League {
+  member_count: number
+  creator_username: string
+}

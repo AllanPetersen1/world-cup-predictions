@@ -68,6 +68,7 @@
   flex-shrink: 0;
 }
 
+
 .username {
   font-family: var(--font-display);
   font-weight: 700;
@@ -75,10 +76,13 @@
   letter-spacing: 0.05em;
   color: var(--off-white);
   text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.15s;
+  cursor: pointer;
 }
 
-@media (max-width: 480px) {
-  .username {
-    display: none;
-  }
+.username:hover {
+  color: var(--green);
+  text-decoration: none;
 }
+

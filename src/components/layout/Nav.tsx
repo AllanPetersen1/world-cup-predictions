@@ -29,15 +29,13 @@ export default function Nav({ username }: NavProps) {
   const links = [
     { href: '/matches', label: 'Matches' },
     { href: '/leaderboard', label: 'Leaderboard' },
+    { href: '/leagues', label: 'Leagues'}
   ]
 
   return (
     <nav className={styles.nav}>
       <div className={`container ${styles.inner}`}>
-        {/* Logo */}
-        <Link href="/matches" className={styles.logo}>
-          Home
-        </Link>
+        
 
         {/* Nav links */}
         <div className={styles.links}>
@@ -55,7 +53,7 @@ export default function Nav({ username }: NavProps) {
         {/* User + logout */}
         <div className={styles.user}>
           {username && (
-            <span className={styles.username}>{username}</span>
+            <a href="/profile" className={styles.username}>{username}</a>
           )}
           <button onClick={handleLogout} className={`btn btn-sm btn-secondary ${styles.logoutBtn}`}>
             Log out
