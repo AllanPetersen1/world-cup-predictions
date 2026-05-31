@@ -94,7 +94,7 @@ export default function PublicProfilePage() {
           <Link href="/leaderboard" className={styles.backLink}>← Leaderboard</Link>
           <h1>{profile?.username}</h1>
           <p className={styles.subtitle}>
-            Locked predictions only — hidden before kickoff
+            Locked predictions only! Hidden before kickoff
           </p>
         </div>
         {/* Points summary */}
