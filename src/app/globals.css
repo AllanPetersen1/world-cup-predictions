@@ -1,10 +1,8 @@
 /* ============================================================
    GLOBAL STYLES — World Cup Predictor
-   
-   Aesthetic: Bold stadium scoreboard energy.
-   Dark navy background, bright green accents, punchy typography.
-   Barlow Condensed for headings (like jersey numbers), 
-   Barlow for body text.
+
+   Aesthetic: Sports newspaper. Clean white, charcoal type,
+   red accents. Think The Athletic meets Transfermarkt.
    ============================================================ */
 
 *, *::before, *::after {
@@ -15,18 +13,18 @@
 
 :root {
   /* Colors */
-  --green: #00C853;
-  --green-dim: #00A040;
-  --navy: #0A0F1E;
-  --navy-mid: #111827;
-  --navy-light: #1C2640;
-  --navy-border: #263055;
-  --white: #FFFFFF;
-  --off-white: #E8EDF5;
-  --grey: #8A97B8;
-  --gold: #FFD700;
-  --red: #FF3B30;
-  --amber: #FF9F0A;
+  --green: #D0222B;
+  --green-dim: #A8181F;
+  --navy: #F7F5F0;
+  --navy-mid: #FFFFFF;
+  --navy-light: #F0EDE8;
+  --navy-border: #DDD9D3;
+  --white: #1A1A1A;
+  --off-white: #2C2C2C;
+  --grey: #888480;
+  --gold: #C8990A;
+  --red: #D0222B;
+  --amber: #C87A0A;
 
   /* Typography */
   --font-display: 'Barlow Condensed', sans-serif;

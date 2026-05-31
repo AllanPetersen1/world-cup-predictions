@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10, 15, 30, 0.95);
+  background: color-mix(in srgb, var(--navy) 90%, transparent);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--navy-border);
 }
@@ -12,17 +12,6 @@
   align-items: center;
   gap: 1rem;
   height: 75px;
-}
-
-.logo {
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 1.4rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--green);
-  text-decoration: none;
-  flex-shrink: 0;
 }
 
 .links {
@@ -53,12 +42,12 @@
 
 .linkActive {
   color: var(--green);
-  background: rgba(0, 200, 83, 0.1);
+  background: color-mix(in srgb, var(--green) 10%, transparent);
 }
 
 .linkActive:hover {
   color: var(--green);
-  background: rgba(0, 200, 83, 0.15);
+  background: color-mix(in srgb, var(--green) 15%, transparent);
 }
 
 .user {
@@ -86,3 +75,27 @@
   text-decoration: none;
 }
 
+
+@media (max-width: 640px) {
+  .username {
+    display: none;
+  }
+
+  .link {
+    font-size: 0.9rem;
+    padding: 0.35rem 0.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .inner {
+    height: 56px;
+  }
+
+
+  .link {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.4rem;
+    letter-spacing: 0.03em;
+  }
+}
