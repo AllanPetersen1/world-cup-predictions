@@ -192,6 +192,7 @@
 }
 
 .saveBtn {
+  margin-top: .5vh;
   min-width: 150px;
   max-width: 200px;
 }
@@ -211,4 +212,15 @@
     width: 30px;
     height: 30px;
   }
+}
+
+/*-- Remove spinner logic on input --*/
+.scoreInput::-webkit-outer-spin-button,
+.scoreInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.scoreInput {
+  -moz-appearance: textfield; /* Firefox */
 }
