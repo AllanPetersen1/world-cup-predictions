@@ -62,7 +62,7 @@ export default function LeaderboardPage() {
 
       <main className="container">
         <div className={styles.pageHeader}>
-          <h1>🏆 Leaderboard</h1>
+          <h1>Leaderboard</h1>
           <p className={styles.subtitle}>Points update automatically after each match</p>
         </div>
 
@@ -81,7 +81,7 @@ export default function LeaderboardPage() {
             {/* Table */}
             {leaderboard.length === 0 ? (
               <div className={styles.empty}>
-                No scores yet — predictions will be scored automatically once matches finish.
+                No scores yet. Predictions will be scored automatically once matches finish.
               </div>
             ) : (
               <div className={styles.table}>

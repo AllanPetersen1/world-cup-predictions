@@ -55,15 +55,15 @@
 }
 
 .crest {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
 }
 
 .teamName {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.2rem;
   letter-spacing: 0.03em;
   color: var(--white);
   line-height: 1.2;
@@ -151,6 +151,7 @@
 .predictionForm {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -161,11 +162,15 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .scoreInputs {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
 }
 
@@ -187,8 +192,9 @@
 }
 
 .saveBtn {
-  margin-left: 0.5rem;
-  min-width: 70px;
+  margin-top: .5vh;
+  min-width: 150px;
+  max-width: 200px;
 }
 
 .inputError {
@@ -206,4 +212,15 @@
     width: 30px;
     height: 30px;
   }
+}
+
+/*-- Remove spinner logic on input --*/
+.scoreInput::-webkit-outer-spin-button,
+.scoreInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.scoreInput {
+  -moz-appearance: textfield; /* Firefox */
 }
