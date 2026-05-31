@@ -151,6 +151,7 @@
 .predictionForm {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -161,11 +162,15 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .scoreInputs {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
 }
 
@@ -187,8 +192,8 @@
 }
 
 .saveBtn {
-  margin-left: 0.5rem;
-  min-width: 70px;
+  min-width: 150px;
+  max-width: 200px;
 }
 
 .inputError {

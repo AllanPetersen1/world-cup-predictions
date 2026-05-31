@@ -201,14 +201,14 @@ export default function MatchCard({ match, prediction, onPredictionSaved }: Matc
                 placeholder="0"
                 aria-label={`${match.away_team} goals`}
               />
-              <button
+            </div>
+            <button
                 onClick={handleSave}
                 disabled={saving || homeGoals === '' || awayGoals === ''}
                 className={`btn btn-primary btn-sm ${styles.saveBtn}`}
               >
                 {saving ? '...' : saved ? '✓' : prediction ? 'Update' : 'Save'}
               </button>
-            </div>
             {error && <p className={styles.inputError}>{error}</p>}
           </div>
         )}
