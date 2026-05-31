@@ -9,7 +9,7 @@ import type { LeaderboardEntry } from '@/types'
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const supabase = await createClient()
 
@@ -18,7 +18,7 @@ export async function GET(
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const leagueId = params.id
+  const { id: leagueId } = await params
 
   // Verify the league exists
   const { data: league, error: leagueError } = await supabase
