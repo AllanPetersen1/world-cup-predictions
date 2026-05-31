@@ -160,10 +160,13 @@ export default function LeaguePage() {
                       </span>
 
                       <div className={styles.colName}>
-                        <span className={styles.playerName}>
+                        <Link
+                          href={isMe ? '/profile' : `/profile/${entry.user_id}`}
+                          className={styles.playerName}
+                        >
                           {entry.username}
                           {isMe && <span className={styles.youBadge}>you</span>}
-                        </span>
+                        </Link>
                         <span className={styles.predCount}>
                           {entry.total_predictions} scored
                         </span>
