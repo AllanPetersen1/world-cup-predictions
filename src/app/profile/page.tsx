@@ -5,7 +5,6 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import Nav from '@/components/layout/Nav'
 import { createClient } from '@/lib/supabase/client'
 import styles from './profile.module.css'
 
@@ -102,15 +101,12 @@ export default function ProfilePage() {
 
   if (loading) return (
     <div>
-      <Nav username={username} />
       <div className="loading">Loading profile...</div>
     </div>
   )
 
   return (
     <div>
-      <Nav username={username} />
-
       <main className="container">
         <div className={styles.pageHeader}>
           <h1>Profile Settings</h1>

@@ -8,7 +8,6 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Nav from '@/components/layout/Nav'
 import { createClient } from '@/lib/supabase/client'
 import styles from './leagues.module.css'
 
@@ -26,8 +25,6 @@ export default function LeaguesPage() {
 
   const [leagues, setLeagues] = useState<LeagueItem[]>([])
   const [loading, setLoading] = useState(true)
-  const [username, setUsername] = useState('')
-  const [currentUserId, setCurrentUserId] = useState('')
 
   // Create modal state
   const [showCreate, setShowCreate] = useState(false)
@@ -44,16 +41,6 @@ export default function LeaguesPage() {
   async function loadData() {
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return
-
-    setCurrentUserId(user.id)
-
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('username')
-      .eq('id', user.id)
-      .single()
-
-    if (profile) setUsername(profile.username)
 
     const res = await fetch('/api/leagues')
     if (res.ok) {
@@ -116,8 +103,6 @@ export default function LeaguesPage() {
 
   return (
     <div>
-      <Nav username={username} />
-
       <main className="container">
         <div className={styles.pageHeader}>
           <div>

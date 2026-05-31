@@ -7,7 +7,6 @@
 // ============================================================
 
 import { useEffect, useState, useCallback } from 'react'
-import Nav from '@/components/layout/Nav'
 import MatchCard from '@/components/ui/MatchCard'
 import { createClient } from '@/lib/supabase/client'
 import type { Match, Prediction } from '@/types'
@@ -20,7 +19,6 @@ export default function MatchesPage() {
 
   const [matches, setMatches] = useState<Match[]>([])
   const [predictions, setPredictions] = useState<Record<string, Prediction>>({})
-  const [username, setUsername] = useState('')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [filter, setFilter] = useState<Filter>('upcoming')
@@ -31,15 +29,7 @@ export default function MatchesPage() {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) return
 
-      // Get username from profile
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('username')
-        .eq('id', user.id)
-        .single()
-
-      if (profile) setUsername(profile.username)
-
+      
       // Fetch matches and predictions in parallel
       const [matchesRes, predictionsRes] = await Promise.all([
         fetch('/api/matches'),
@@ -100,8 +90,6 @@ export default function MatchesPage() {
 
   return (
     <div>
-      <Nav username={username} />
-
       <main className="container">
         <div className={styles.pageHeader}>
           <div>

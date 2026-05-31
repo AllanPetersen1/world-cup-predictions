@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import AppShell from '@/components/layout/AppShell'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -6,11 +7,7 @@ export const metadata: Metadata = {
   description: 'Predict match scores, compete with friends',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -21,7 +18,9 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <AppShell>{children}</AppShell>
+      </body>
     </html>
   )
 }

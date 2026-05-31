@@ -6,7 +6,6 @@
 // ============================================================
 
 import { useEffect, useState } from 'react'
-import Nav from '@/components/layout/Nav'
 import { createClient } from '@/lib/supabase/client'
 import type { LeaderboardEntry } from '@/types'
 import styles from './leaderboard.module.css'
@@ -17,7 +16,6 @@ export default function LeaderboardPage() {
   const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
-  const [username, setUsername] = useState('')
   const [currentUserId, setCurrentUserId] = useState('')
 
   useEffect(() => {
@@ -26,14 +24,6 @@ export default function LeaderboardPage() {
       if (!user) return
 
       setCurrentUserId(user.id)
-
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('username')
-        .eq('id', user.id)
-        .single()
-
-      if (profile) setUsername(profile.username)
 
       const res = await fetch('/api/leaderboard')
       if (!res.ok) {
@@ -58,8 +48,6 @@ export default function LeaderboardPage() {
 
   return (
     <div>
-      <Nav username={username} />
-
       <main className="container">
         <div className={styles.pageHeader}>
           <h1>Leaderboard</h1>

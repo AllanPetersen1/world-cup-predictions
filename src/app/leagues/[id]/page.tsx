@@ -9,7 +9,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
-import Nav from '@/components/layout/Nav'
 import { createClient } from '@/lib/supabase/client'
 import type { LeaderboardEntry } from '@/types'
 import styles from './league.module.css'
@@ -31,7 +30,6 @@ export default function LeaguePage() {
   const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
-  const [username, setUsername] = useState('')
   const [currentUserId, setCurrentUserId] = useState('')
   const [copied, setCopied] = useState(false)
   const [leaving, setLeaving] = useState(false)
@@ -42,14 +40,6 @@ export default function LeaguePage() {
       if (!user) return
 
       setCurrentUserId(user.id)
-
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('username')
-        .eq('id', user.id)
-        .single()
-
-      if (profile) setUsername(profile.username)
 
       const res = await fetch(`/api/leagues/${leagueId}/leaderboard`)
 
@@ -100,8 +90,6 @@ export default function LeaguePage() {
 
   return (
     <div>
-      <Nav username={username} />
-
       <main className="container">
         {loading && <div className="loading">Loading league...</div>}
 
