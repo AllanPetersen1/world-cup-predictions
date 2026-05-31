@@ -88,9 +88,8 @@ export default function LoginPage() {
       <div className={styles.container}>
         {/* Header */}
         <div className={styles.header}>
-          <div className={styles.trophy}>⚽</div>
-          <h1 className={styles.title}>Predictor</h1>
-          <p className={styles.subtitle}>World Cup 2026 · Predict · Compete · Win</p>
+          <h1 className={styles.title}>Petersens Predictor</h1>
+          <p className={styles.subtitle}>World Cup 2026</p>
         </div>
 
         {/* Auth card */}

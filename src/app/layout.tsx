@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Predictor — World Cup 2026',
+  title: 'World Cup 2026',
   description: 'Predict match scores, compete with friends',
 }
 
