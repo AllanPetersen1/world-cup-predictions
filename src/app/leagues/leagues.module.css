@@ -1,0 +1,168 @@
+.pageHeader {
+  padding: 2rem 0 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.subtitle {
+  color: var(--grey);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.headerButtons {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* ---- Modal ---- */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 1rem;
+}
+
+.modalInner {
+  background: var(--navy-mid);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modalInner h3 {
+  color: var(--white);
+}
+
+.modalSubtitle {
+  color: var(--grey);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.modalButtons {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+/* ---- League Cards ---- */
+
+.leagueGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  padding-bottom: 3rem;
+}
+
+.leagueCard {
+  background: var(--navy-mid);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-decoration: none;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+
+.leagueCard:hover {
+  border-color: var(--green);
+  background: var(--navy-light);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.leagueCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.leagueName {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.creatorBadge {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(0, 200, 83, 0.15);
+  color: var(--green);
+  border: 1px solid var(--green);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.leagueCardBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.memberCount {
+  font-size: 0.85rem;
+  color: var(--grey);
+}
+
+.inviteCode {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--grey);
+  background: var(--navy);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+/* ---- Empty state ---- */
+
+.empty {
+  text-align: center;
+  padding: 5rem 1rem;
+  color: var(--grey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.empty span {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
