@@ -207,7 +207,7 @@ export default function MatchCard({ match, prediction, onPredictionSaved }: Matc
                 disabled={saving || homeGoals === '' || awayGoals === ''}
                 className={`btn btn-primary btn-sm ${styles.saveBtn}`}
               >
-                {saving ? '...' : saved ? '✓' : prediction ? 'Update' : 'Save'}
+                {saving ? '...' : saved ? 'Saved!' : prediction ? 'Update' : 'Save'}
               </button>
             {error && <p className={styles.inputError}>{error}</p>}
           </div>
