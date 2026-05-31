@@ -121,7 +121,7 @@ export default function LeaguesPage() {
       <main className="container">
         <div className={styles.pageHeader}>
           <div>
-            <h1>🏅 My Leagues</h1>
+            <h1>My Leagues</h1>
             <p className={styles.subtitle}>
               Create a private league and compete with friends
             </p>
