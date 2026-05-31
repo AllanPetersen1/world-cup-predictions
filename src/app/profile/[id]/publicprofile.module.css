@@ -1,0 +1,247 @@
+.pageHeader {
+  padding: 2rem 0 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.backLink {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.backLink:hover {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--grey);
+}
+
+.pointsSummary {
+  background: var(--navy-light);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.5rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.pointsNum {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: var(--green);
+  line-height: 1;
+}
+
+.pointsLabel {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-top: 0.25rem;
+}
+
+/* ---- Filters ---- */
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.filterBtn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--grey);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filterBtn:hover {
+  color: var(--white);
+  border-color: var(--grey);
+}
+
+.filterActive {
+  background: var(--navy-light);
+  color: var(--green);
+  border-color: var(--green);
+}
+
+/* ---- Cards ---- */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 3rem;
+}
+
+.card {
+  transition: border-color 0.2s;
+}
+
+.live {
+  border-color: var(--green);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.stage {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.matchup {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.teamHome { align-items: flex-end; text-align: right; }
+.teamAway { align-items: flex-start; text-align: left; }
+
+.crest {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--navy-light);
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.teamName {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.scoreSection { text-align: center; min-width: 80px; }
+
+.score {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.scoreDash { color: var(--grey); font-weight: 400; }
+
+.kickoff { display: flex; flex-direction: column; align-items: center; }
+
+.kickoffDate {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.kickoffTime {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+/* ---- Prediction row ---- */
+
+.predictionRow {
+  border-top: 1px solid var(--navy-border);
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.predLabel {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.predScore {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--green);
+}
+
+.noPred {
+  font-size: 0.85rem;
+  color: var(--grey);
+  font-style: italic;
+}
+
+.empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--grey);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
