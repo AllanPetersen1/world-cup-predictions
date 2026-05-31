@@ -56,7 +56,7 @@ export default function Nav({ username }: NavProps) {
         {/* User + logout */}
         <div className={styles.user}>
           {username && (
-            <span className={styles.username}>{username}</span>
+            <a href="/profile" className={styles.username}>{username}</a>
           )}
           <button onClick={handleLogout} className={`btn btn-sm btn-secondary ${styles.logoutBtn}`}>
             Log out
