@@ -28,8 +28,8 @@ export default function Nav({ username }: NavProps) {
 
   const links = [
     { href: '/matches', label: 'Matches' },
-    { href: '/leaderboard', label: 'Leaderboard' },
-    { href: '/leagues', label: 'Leagues'}
+    { href: '/leaderboard', label: 'Global Leaderboard' },
+    { href: '/leagues', label: 'Private Leagues'}
   ]
 
   return (
