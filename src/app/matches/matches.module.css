@@ -12,11 +12,12 @@
 }
 
 .progressBar {
-  height: 4px;
+  height: 5px;
   background: var(--navy-light);
   border-radius: 2px;
   overflow: hidden;
-  max-width: 300px;
+  min-width: 100%;
+  margin-bottom: 2vh;
 }
 
 .progressFill {
@@ -87,4 +88,382 @@
   letter-spacing: 0;
   max-width: 360px;
   line-height: 1.5;
+}
+
+/* ---- Tabs ---- */
+
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--navy-border);
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: var(--grey);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all 0.15s;
+}
+
+.tab:hover { color: var(--white); }
+
+.tabActive {
+  color: var(--green);
+  border-bottom-color: var(--green);
+}
+
+/* ---- Stats tab ---- */
+
+.statsSection {
+  padding-bottom: 3rem;
+}
+
+.statRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.stat {
+  background: var(--navy-light);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.statNum {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.75rem;
+  color: var(--white);
+  line-height: 1;
+}
+
+.statLabel {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.chartWrap {
+  background: var(--navy-mid);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1rem 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.chartTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+}
+
+/* ---- Tooltip ---- */
+
+.tooltip {
+  background: var(--navy-mid);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  min-width: 180px;
+}
+
+.tooltipMatch {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 0.5rem;
+}
+
+.tooltipRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--off-white);
+  margin-bottom: 0.2rem;
+}
+
+.tooltipPts {
+  font-weight: 600;
+  color: var(--green);
+}
+
+.tooltipTotal {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--white);
+}
+
+.tooltipPred {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--grey);
+  border-top: 1px solid var(--navy-border);
+  padding-top: 0.4rem;
+}
+
+/* ---- Scored list ---- */
+
+.scoredList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.scoredTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grey);
+  padding: 0.6rem 1.25rem;
+  background: var(--navy-light);
+  border-bottom: 1px solid var(--navy-border);
+}
+
+.scoredRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--navy-border);
+  gap: 1rem;
+  transition: background 0.15s;
+}
+
+.scoredRow:last-child { border-bottom: none; }
+.scoredRow:hover { background: var(--navy-light); }
+
+.scoredTeams {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.scoredRight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.scoredActual {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--white);
+}
+
+.scoredPred {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--grey);
+}
+
+.noPred {
+  font-size: 0.8rem;
+  color: var(--grey);
+  font-style: italic;
+}
+
+/* ---- Accuracy breakdown ---- */
+
+.accuracyRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.accuracyStat {
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border: 1px solid var(--navy-border);
+}
+
+.exact { background: rgba(255, 215, 0, 0.08); border-color: rgba(255, 215, 0, 0.3); }
+.correct { background: rgba(0, 200, 83, 0.06); border-color: rgba(0, 200, 83, 0.2); }
+.wrong { background: var(--navy-light); }
+
+.accuracyNum {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--white);
+}
+
+.accuracyLabel {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.accuracyPts {
+  font-size: 0.75rem;
+  color: var(--grey);
+}
+
+/* ---- Insight row ---- */
+
+.insightRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.insightCard {
+  background: var(--navy-light);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.insightTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.insightBig {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.75rem;
+  color: var(--green);
+  letter-spacing: 0.02em;
+}
+
+.insightEmpty {
+  font-size: 0.8rem;
+  color: var(--grey);
+  font-style: italic;
+}
+
+/* ---- Form dots ---- */
+
+.formDots {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.formDot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.75rem;
+}
+
+.form_exact { background: var(--gold); color: var(--navy); }
+.form_correct { background: color-mix(in srgb, var(--green) 20%, transparent); color: var(--green); border: 1px solid var(--green); }
+.form_wrong { background: var(--navy-border); color: var(--grey); }
+.form_none { background: transparent; color: var(--grey); border: 1px dashed var(--navy-border); }
+
+/* ---- Biggest miss ---- */
+
+.biggestMiss {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.missTeams {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.missScores {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.missPred {
+  font-size: 0.8rem;
+  color: var(--grey);
+}
+
+.missActual {
+  font-size: 0.8rem;
+  color: var(--red);
+}
+
+@media (max-width: 640px) {
+  .insightRow { grid-template-columns: 1fr; }
+  .accuracyRow { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 420px) {
+  .accuracyRow { grid-template-columns: 1fr; }
+}
+
+
+@media (max-width: 480px) {
+  .statRow { grid-template-columns: repeat(2, 1fr); }
+
+  .scoredTeams {
+    font-size: 0.8rem;
+  }
 }
