@@ -22,9 +22,6 @@ import { fetchCompetitionMatches } from '@/lib/football-api'
 import { calculatePoints } from '@/lib/scoring'
 import { NextResponse } from 'next/server'
 
-export const dynamic = 'force-dynamic' // <--- THIS KILLS THE CACHE
-
-
 export async function GET(request: Request) {
   // ---- Security check ----
   // Only allow requests with the correct secret
