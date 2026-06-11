@@ -34,6 +34,7 @@ jobs:
           
           RESPONSE=$(curl \
             --silent \
+            --location \
             --write-out "HTTP_STATUS:%{http_code}" \
             --header "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
             "${{ secrets.APP_URL }}/api/cron/update-results")
