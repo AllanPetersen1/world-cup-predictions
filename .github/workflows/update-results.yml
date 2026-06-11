@@ -29,15 +29,20 @@ jobs:
     
     steps:
       - name: Trigger result update
+        # 1. WE DECLARE THE SECRETS HERE SECURELY
+        env: 
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          APP_URL: ${{ secrets.APP_URL }}
         run: |
           echo "Calling cron endpoint at $(date)"
           
+          # 2. WE USE BASH VARIABLES INSTEAD OF GITHUB SECRETS
           RESPONSE=$(curl \
             --silent \
             --location \
             --write-out "HTTP_STATUS:%{http_code}" \
-            --header "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
-            "${{ secrets.APP_URL }}/api/cron/update-results")
+            --header "Authorization: Bearer $CRON_SECRET" \
+            "$APP_URL/api/cron/update-results")
           
           HTTP_STATUS=$(echo $RESPONSE | grep -o "HTTP_STATUS:[0-9]*" | cut -d: -f2)
           BODY=$(echo $RESPONSE | sed 's/HTTP_STATUS:[0-9]*//')
