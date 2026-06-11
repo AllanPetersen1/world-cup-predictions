@@ -22,6 +22,24 @@ import { fetchCompetitionMatches } from '@/lib/football-api'
 import { calculatePoints } from '@/lib/scoring'
 import { NextResponse } from 'next/server'
 
+export const dynamic = 'force-dynamic' // <--- THIS KILLS THE CACHE
+export async function GET(request: Request) {
+  const authHeader = request.headers.get('authorization')
+  const expectedToken = `Bearer ${process.env.CRON_SECRET}`
+
+  // 2. ADD THESE LOGS TO SEE WHAT THE SERVER ACTUALLY SEES
+  console.log("=== CRON DIAGNOSTICS ===")
+  console.log("Secret in Vercel:", process.env.CRON_SECRET ? "Exists" : "MISSING!")
+  console.log("Expected length:", expectedToken.length)
+  console.log("Received length:", authHeader?.length || 0)
+  console.log("========================")
+
+  if (authHeader !== expectedToken) {
+    console.warn('Cron job called with invalid token')
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+}
+
 export async function GET(request: Request) {
   // ---- Security check ----
   // Only allow requests with the correct secret
