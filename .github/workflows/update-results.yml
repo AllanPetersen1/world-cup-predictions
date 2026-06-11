@@ -39,7 +39,7 @@ jobs:
           # 2. WE USE BASH VARIABLES INSTEAD OF GITHUB SECRETS
           RESPONSE=$(curl \
             --silent \
-            --location \
+            --location-trusted \
             --write-out "HTTP_STATUS:%{http_code}" \
             --header "Authorization: Bearer $CRON_SECRET" \
             "$APP_URL/api/cron/update-results")
