@@ -170,8 +170,14 @@ export default function MatchesPage() {
   }
 
   useEffect(() => {
+  loadMatches()
+
+  const interval = setInterval(() => {
     loadMatches()
-  }, [loadMatches])
+  }, 30 * 60 * 1000) // refetch every 30 minutes
+
+  return () => clearInterval(interval)
+}, [loadMatches])
 
   // Load stats when switching to that tab
   useEffect(() => {
