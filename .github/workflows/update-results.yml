@@ -15,10 +15,11 @@
 name: Update Match Results
 
 on:
-  schedule:
-    # Runs every 30 minutes
-    # Cron syntax: minute hour day month weekday
-    - cron: '*/30 * * * *'
+  # ============================================================
+  # CRON DISABLED: Handled by cron-job.org
+  # ============================================================
+  # schedule:
+  #   - cron: '*/30 * * * *'
   
   # Also allow manual trigger from GitHub UI
   workflow_dispatch:
