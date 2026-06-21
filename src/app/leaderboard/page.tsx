@@ -38,6 +38,10 @@ export default function LeaderboardPage() {
     }
 
     load()
+
+    const interval = setInterval(load, 5 * 60 * 1000)
+
+    return () => clearInterval(interval)
   }, [supabase])
 
   const rankEmoji = (rank: number) => {

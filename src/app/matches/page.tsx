@@ -174,7 +174,7 @@ export default function MatchesPage() {
 
   const interval = setInterval(() => {
     loadMatches()
-  }, 30 * 60 * 1000) // refetch every 30 minutes
+  }, 5 * 60 * 1000) // refetch every 5 minutes
 
   return () => clearInterval(interval)
 }, [loadMatches])
