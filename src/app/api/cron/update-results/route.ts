@@ -156,7 +156,6 @@ async function scorePredictionsForMatch(
     .from('predictions')
     .select('id, predicted_home, predicted_away, points_awarded')
     .eq('match_id', matchId)
-    .is('points_awarded', null) // Only unscored predictions
 
   if (error) {
     log.push(`Error fetching predictions for match ${matchId}: ${error.message}`)
