@@ -123,18 +123,6 @@ export async function GET(request: Request) {
       }
     }
 
-    // ---- Step 4: Refresh the Global Leaderboard ----
-    if (updatedMatchCount > 0) {
-      log.push('Refreshing materialized leaderboard view...')
-      const { error: refreshError } = await supabase.rpc('refresh_leaderboard_view')
-      
-      if (refreshError) {
-        log.push(`Error refreshing leaderboard: ${refreshError.message}`)
-      } else {
-        log.push('Leaderboard refreshed successfully.')
-      }
-    }
-
     log.push(`Done. Updated ${updatedMatchCount} matches.`)
 
     return NextResponse.json({
